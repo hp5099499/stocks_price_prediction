@@ -16,3 +16,4 @@ yahooquery
 requests
 pymongo
 bcrypt
+newsapi-python
