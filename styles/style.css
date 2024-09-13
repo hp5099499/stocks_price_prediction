@@ -1,0 +1,26 @@
+div.st-emotion-cache-1b2d4l5.e1f1d6gn3
+{
+    border: 2px solid green;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    max-width:max-content;
+}
+.header{
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(3, 100, 32);
+    border:2px solid black;
+    padding:10px;
+    margin:10px;
+    border-radius: 10px;
+}
+.demp{
+margin: 15px;
+padding:10px
+}
+.spl{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color:rgba(193, 233, 213, 0.336);
+font-size:15px ;
+}

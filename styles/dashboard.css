@@ -1,0 +1,31 @@
+.custom-header {
+        font-size: 30px;
+        font-weight: bold;
+        color: #4CAF50;  /* Change this to your desired color */
+        text-align: center;
+        /* background-color: rgb(184, 236, 206); */
+        padding: 5px;
+        border-radius: 10px;
+        border: 5px solid green;
+        margin:10px
+    }
+div#stTableStyledTable{
+border: 5px solid rgb(6, 129, 151);
+padding: 20px 20px 0px 0px;
+padding: 5% 5% 5% 5%;
+border-radius: 10px;
+margin-top: 20px;
+}
+table.st-emotion-cache-zuelfj.e1q9reml3{
+    thead{
+        tr{
+            background-color: aqua;
+        }
+    }
+}
+div#columns.st-emotion-cache-1b2d4l5.e1f1d6gn3{
+    border:2px solid rgb(45, 223, 113);
+    padding:20px;
+    width:180px;
+    border-radius:10px;
+}
