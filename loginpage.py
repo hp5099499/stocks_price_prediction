@@ -72,7 +72,7 @@ def display():
             if username:
                 st.session_state['username'] = username
                 st.success(f"Welcome, {username}!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Please enter a username.")
     else:
@@ -110,11 +110,11 @@ def display():
                     if st.button(f"Remove "):
                         delete_stock_from_watchlist(username, selected_watchlist, selected_ticker)
                         st.success(f"Stock '{selected_ticker}' removed from watchlist '{selected_watchlist}' successfully!")
-                        st.experimental_rerun()
+                        st.rerun()
                 if st.sidebar.button(f"Delete {selected_watchlist}"):
                     delete_watchlist(username, selected_watchlist)
                     st.success(f"Watchlist '{selected_watchlist}' deleted successfully!")
-                    st.experimental_rerun()
+                    st.rerun()
         else:
             st.write("No watchlists found.")
         
@@ -130,7 +130,7 @@ def display():
                     tickers_list = [ticker.strip().upper() for ticker in tickers_input.split(',')]
                     save_watchlist(username, watchlist_name, tickers_list)
                     st.success(f"Watchlist '{watchlist_name}' saved successfully!")
-                    st.experimental_rerun()
+                    st.rerun()
                 else:
                     st.error("Please enter both a watchlist name and tickers.")
         
