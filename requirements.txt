@@ -17,3 +17,4 @@ requests
 pymongo
 bcrypt
 newsapi-python
+translate
