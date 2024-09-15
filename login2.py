@@ -487,13 +487,15 @@ if st.session_state["logged_in"]:
     choice = st_navbar(["Home", "Dashboard", "Analysis", "About", "Watchlist", "Setting"])
 
     if choice == "Home":
+        
         import pthon
-        st.markdown("<div class='header'>Top Gainers</div>",unsafe_allow_html=True)
-        pthon.fetch_gainers()
-        st.markdown("<div class='header'>Top Losers</div>",unsafe_allow_html=True)
-        pthon.display_losers()
-        st.markdown("<div class='header'>Indices</div>",unsafe_allow_html=True)
-        pthon.display_indices()
+        pthon.main()
+        # st.markdown("<div class='header'>Top Gainers</div>",unsafe_allow_html=True)
+        # pthon.fetch_gainers()
+        # st.markdown("<div class='header'>Top Losers</div>",unsafe_allow_html=True)
+        # pthon.display_losers()
+        # st.markdown("<div class='header'>Indices</div>",unsafe_allow_html=True)
+        # pthon.display_indices()
 
     elif choice == "Dashboard":
         st.markdown("<div class='header'>Stock Dashboard</div>",unsafe_allow_html=True)
