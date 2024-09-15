@@ -32,19 +32,19 @@ def display():
     </p>""",unsafe_allow_html=True)
     st.markdown("<div class='header'>Our Team",unsafe_allow_html=True)
     st.markdown("""<p style='margin:15px'>
-        <span class='spl'>Himanshu Prajapti</span> - Financial analytics,database, data science and machine learning.<br>
-        <span class='spl'>Mohit Maurya</span> - Software development and authentication.<br>
-        <span class='spl'>Surajit Ghost</span> - Focused on data analysis and front-end development.<br>
-        <span class='spl'>Mahendra Kumar</span> Bharaduwaj - Experienced in digital marketing and user engagement.<br>
+        <span class='spl'>Himanshu Prajapati </span> - Financial analytics, database, data science and machine learning.<br>
+        <span class='spl'>Mohit Maurya </span> - Software development, error handling and authentication.<br>
+        <span class='spl'>Surajit Ghosh </span> - Focused on data analysis and front-end development.<br>
+        <span class='spl'>Mahender Kumar Bharaduwaj </span> - Experienced in digital marketing and user engagements.<br>
         </p>""",unsafe_allow_html=True)
     
     st.markdown("<div class='header'>Contact Us",unsafe_allow_html=True)
     st.markdown("""<p style='margin:15px'>
         If you have any questions or feedback, feel free to reach out to us at:<br>
         Email: <a>support@stockai.com</a><br>
-        Phone: +1 (555) 123-4567<br>
-        Address: 123 Finance Street, Suite 456, New York, NY 15001, USA<br>
-        Follow us on :Twitter:<a>(https://twitter.com/StockAI)</a><br> LinkedIn:<a>(https://linkedin.com/company/stockai)</a> for the latest updates!<br>
+        Phone: +91 8090724228, 9310483653, 6294494643<br>
+        Address: stockai, New Delhi, India, 110001<br>
+        Follow us on :Twitter:<a>(https://twitter.com/stockai)</a><br> LinkedIn:<a>(https://linkedin.com/company/stockai)</a> for the latest updates!<br>
         </p>""",unsafe_allow_html=True)
 
 
