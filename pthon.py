@@ -43,7 +43,7 @@ def fetch_gainers():
     else:
         st.error(f"Failed to retrieve data. Status code: {response.status_code}")
 
-Function to scrape Top Losers from Groww
+# Function to scrape Top Losers from Groww
 def scrape_top_losers():
     url = "https://groww.in/markets/top-losers"
     response = requests.get(url)
