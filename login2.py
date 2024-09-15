@@ -379,7 +379,7 @@ def signup():
                 save_user_data(email, username, hashed_password)
                 st.success("Sign up successful! You can now log in.")
                 st.session_state['redirect_to_signin'] = True
-                st.experimental_rerun()
+                st._rerun()
 
 # Sign-in function
 def signin():
