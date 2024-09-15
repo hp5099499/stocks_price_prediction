@@ -43,96 +43,96 @@ def fetch_gainers():
     else:
         st.error(f"Failed to retrieve data. Status code: {response.status_code}")
 
-# Function to scrape Top Losers from Groww
-# def scrape_top_losers():
-#     url = "https://groww.in/markets/top-losers"
-#     response = requests.get(url)
-#     soup = BeautifulSoup(response.content, "html.parser")
-#     table = soup.find('table')
-#     if not table:
-#         return []
+Function to scrape Top Losers from Groww
+def scrape_top_losers():
+    url = "https://groww.in/markets/top-losers"
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, "html.parser")
+    table = soup.find('table')
+    if not table:
+        return []
     
-#     headers = [header.get_text() for header in table.find_all('th')]
-#     rows = [
-#         dict(zip(headers, [col.get_text(strip=True) for col in row.find_all('td')]))
-#         for row in table.find_all('tr')[1:] if row.find_all('td')
-#     ]
-#     return rows
+    headers = [header.get_text() for header in table.find_all('th')]
+    rows = [
+        dict(zip(headers, [col.get_text(strip=True) for col in row.find_all('td')]))
+        for row in table.find_all('tr')[1:] if row.find_all('td')
+    ]
+    return rows
 
-# # Function to get tickers from company names using Yahoo Query
-# def get_tickers_from_names(companies):
-#     tickers = {}
-#     for company in companies:
-#         try:
-#             results = search(company).get('quotes', [])
-#             tickers[company] = results[0]['symbol'] if results else None
-#         except Exception:
-#             tickers[company] = None
-#     return tickers
+# Function to get tickers from company names using Yahoo Query
+def get_tickers_from_names(companies):
+    tickers = {}
+    for company in companies:
+        try:
+            results = search(company).get('quotes', [])
+            tickers[company] = results[0]['symbol'] if results else None
+        except Exception:
+            tickers[company] = None
+    return tickers
 
-# # Function to fetch stock data using YFinance
-# def fetch_stock_data(tickers):
-#     data = {}
-#     for company, symbol in tickers.items():
-#         if not symbol:
-#             data[company] = {key: None for key in ['Open Price', 'High Price', 'Low Price', 'Previous Close', 'Close', 'Change (%)']}
-#             continue
+# Function to fetch stock data using YFinance
+def fetch_stock_data(tickers):
+    data = {}
+    for company, symbol in tickers.items():
+        if not symbol:
+            data[company] = {key: None for key in ['Open Price', 'High Price', 'Low Price', 'Previous Close', 'Close', 'Change (%)']}
+            continue
         
-#         try:
-#             stock = yf.Ticker(symbol)
-#             hist = stock.history(period='5d')
-#             if len(hist) >= 2:
-#                 prev_close = hist['Close'].iloc[-2]
-#                 curr_close = hist['Close'].iloc[-1]
-#                 change = curr_close - prev_close
-#                 data[company] = {
-#                     'Open Price': f"{hist['Open'].iloc[-1]:.2f}",
-#                     'High Price': f"{hist['High'].iloc[-1]:.2f}",
-#                     'Low Price': f"{hist['Low'].iloc[-1]:.2f}",
-#                     'Previous Close': f"{prev_close:.2f}",
-#                     'Close': f"{curr_close:.2f}",
-#                     'Change (%)': f"{(change / prev_close) * 100:.2f}"
-#                 }
-#             else:
-#                 data[company] = {key: None for key in ['Open Price', 'High Price', 'Low Price', 'Previous Close', 'Close', 'Change (%)']}
-#         except Exception as e:
-#             st.error(f"Error fetching data for {company}: {e}")
-#             data[company] = {key: None for key in ['Open Price', 'High Price', 'Low Price', 'Previous Close', 'Close', 'Change (%)']}
+        try:
+            stock = yf.Ticker(symbol)
+            hist = stock.history(period='5d')
+            if len(hist) >= 2:
+                prev_close = hist['Close'].iloc[-2]
+                curr_close = hist['Close'].iloc[-1]
+                change = curr_close - prev_close
+                data[company] = {
+                    'Open Price': f"{hist['Open'].iloc[-1]:.2f}",
+                    'High Price': f"{hist['High'].iloc[-1]:.2f}",
+                    'Low Price': f"{hist['Low'].iloc[-1]:.2f}",
+                    'Previous Close': f"{prev_close:.2f}",
+                    'Close': f"{curr_close:.2f}",
+                    'Change (%)': f"{(change / prev_close) * 100:.2f}"
+                }
+            else:
+                data[company] = {key: None for key in ['Open Price', 'High Price', 'Low Price', 'Previous Close', 'Close', 'Change (%)']}
+        except Exception as e:
+            st.error(f"Error fetching data for {company}: {e}")
+            data[company] = {key: None for key in ['Open Price', 'High Price', 'Low Price', 'Previous Close', 'Close', 'Change (%)']}
     
-#     return data
+    return data
 
-# # Function to fetch real-time index data
-# # Streamlit layout for displaying Top Losers
-# @st.cache_data(ttl=86400)  # Cache data for 86400 seconds (1 day)
-# def get_loser_data():
-#     data = scrape_top_losers()
-#     if data:
-#         companies = [item['Company'] for item in data]
-#         tickers = get_tickers_from_names(companies)
-#         stock_data = fetch_stock_data(tickers)
-#         table = [{
-#             "Symbol": symbol,
-#             "Open Price": stock_info['Open Price'],
-#             "High Price": stock_info['High Price'],
-#             "Low Price": stock_info['Low Price'],
-#             "Previous Close": stock_info['Previous Close'],
-#             "Close": stock_info['Close'],
-#             "Change (%)": stock_info['Change (%)']
-#         } for symbol, stock_info in stock_data.items()]
-#         return table
-#     else:
-#         return []
+# Function to fetch real-time index data
+# Streamlit layout for displaying Top Losers
+@st.cache_data(ttl=86400)  # Cache data for 86400 seconds (1 day)
+def get_loser_data():
+    data = scrape_top_losers()
+    if data:
+        companies = [item['Company'] for item in data]
+        tickers = get_tickers_from_names(companies)
+        stock_data = fetch_stock_data(tickers)
+        table = [{
+            "Symbol": symbol,
+            "Open Price": stock_info['Open Price'],
+            "High Price": stock_info['High Price'],
+            "Low Price": stock_info['Low Price'],
+            "Previous Close": stock_info['Previous Close'],
+            "Close": stock_info['Close'],
+            "Change (%)": stock_info['Change (%)']
+        } for symbol, stock_info in stock_data.items()]
+        return table
+    else:
+        return []
 
-# # Function to display the cached data
-# def display_losers():
-#     with st.spinner('Loading data...'):
-#         table = get_loser_data()
-#         if table:
-#             df = pd.DataFrame(table)
-#             df.index += 1  # Add index starting from 1
-#             st.table(df)
-#         else:
-#             st.write('No data found or unable to fetch data.')
+# Function to display the cached data
+def display_losers():
+    with st.spinner('Loading data...'):
+        table = get_loser_data()
+        if table:
+            df = pd.DataFrame(table)
+            df.index += 1  # Add index starting from 1
+            st.table(df)
+        else:
+            st.write('No data found or unable to fetch data.')
 
 # Function to display Real-Time Indices Data
 # Function to display Real-Time Indices Data
