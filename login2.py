@@ -491,7 +491,7 @@ if st.session_state["logged_in"]:
          st.markdown("<div class='header'>Top Gainers</div>",unsafe_allow_html=True)
          pthon.fetch_gainers()
          st.markdown("<div class='header'>Top Losers</div>",unsafe_allow_html=True)
-         pthon.display_losers()
+         pthon.get_loser_data()
          st.markdown("<div class='header'>Indices</div>",unsafe_allow_html=True)
          pthon.display_indices()
 
