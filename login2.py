@@ -2,6 +2,12 @@ import streamlit as st
 from pymongo import MongoClient
 import hashlib, uuid
 import re
+import requests
+from bs4 import BeautifulSoup
+import yfinance as yf
+from yahooquery import search
+import pandas as pd
+import time
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
