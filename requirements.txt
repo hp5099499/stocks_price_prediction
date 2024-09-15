@@ -18,5 +18,4 @@ pymongo
 bcrypt
 newsapi-python
 translate
-time
 pip
