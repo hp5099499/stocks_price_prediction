@@ -195,3 +195,11 @@ def rerun_indices():
         time.sleep(0.1)  # Wait for 3 minutes (180 seconds)
         st.rerun()
 # Main function to run the app
+def main():
+    st.title("Financial Dashboard")
+    fetch_gainers()
+    display_losers()
+    rerun_indices()
+
+if __name__ == "__main__":
+    main()
