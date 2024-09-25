@@ -324,7 +324,7 @@ def send_reset_email(user_email, token):
     msg['To'] = receiver_email
     msg['Subject'] = 'Password Reset Request'
 
-    reset_link = f"http://localhost:8501/?token={token}&email={user_email}"
+    reset_link = f"https://stock-market-prediction-stockai.streamlit.app/?token={token}&email={user_email}"
     body = f"Hi,\n\nClick the link below to reset your password:\n{reset_link}"
     msg.attach(MIMEText(body, 'plain'))
 
