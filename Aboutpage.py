@@ -36,7 +36,7 @@ def display():
         <span class='spl'>Mohit Maurya </span> - Software development, error handling and authentication.<br>
         <span class='spl'>Surajit Ghosh </span> - Focused on data analysis and front-end development.<br>
       
-        </p>""",unsafe_allow_html=True)
+        """,unsafe_allow_html=True)
     
     st.markdown("<div class='header'>Contact Us",unsafe_allow_html=True)
     st.markdown("""<p style='margin:15px'>
