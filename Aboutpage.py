@@ -35,7 +35,7 @@ def display():
         <span class='spl'>Himanshu Prajapati </span> - Financial analytics, database, data science and machine learning.<br>
         <span class='spl'>Mohit Maurya </span> - Software development, error handling and authentication.<br>
         <span class='spl'>Surajit Ghosh </span> - Focused on data analysis and front-end development.<br>
-        <span class='spl'>Mahender Kumar Bharaduwaj </span> - Experienced in digital marketing and user engagements.<br>
+      
         </p>""",unsafe_allow_html=True)
     
     st.markdown("<div class='header'>Contact Us",unsafe_allow_html=True)
