@@ -1,4 +1,4 @@
-﻿# stock_prediction_app
+# Stock Data Analysis and Prediction
 
  
 
